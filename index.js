@@ -27,9 +27,11 @@ mongoose
 const corsOptions = {
   origin: [
     "http://localhost:3000",
+    "https://localhost:3000",
     "http://192.168.100.5:3000",
     "http://localhost:4000",
     "https://netflixclonadmin.onrender.com",
+    "http://netflixclonadmin.onrender.com",
     "https://localhost",
   ], // Remplacez par le domaine de votre frontend déployé
   methods: "GET,POST,PUT,DELETE",
