@@ -35,7 +35,7 @@ const corsOptions = {
     "https://localhost",
   ], // Remplacez par le domaine de votre frontend déployé
   methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "*",
+  optionsSuccessStatus: 200
 };
 
 app.use(express.json());
