@@ -33,6 +33,7 @@ const corsOptions = {
     "https://netflixclonadmin.onrender.com",
     "http://netflixclonadmin.onrender.com",
     "https://localhost",
+    "https://clonenetflixtest.onrender.com"
   ], // Remplacez par le domaine de votre frontend déployé
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "*",
