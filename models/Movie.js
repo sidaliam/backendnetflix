@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const SubtitleSchema = new mongoose.Schema({
-  src: { type: String, required: true },
-  srcLang: { type: String, required: true },
-  label: { type: String, required: true },
-});
+
 
 const MovieSchema = new mongoose.Schema(
   {
@@ -20,7 +16,6 @@ const MovieSchema = new mongoose.Schema(
     limit: { type: Number },
     genre: { type: String },
     isSeries: { type: Boolean, default: false },
-    subtitles: [SubtitleSchema],
   },
   { timestamps: true }
 );
