@@ -28,6 +28,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3000",
     "https://localhost:3000",
+    "https://localhost:3001",
     "http://192.168.100.5:3000",
     "http://localhost:4000",
     "https://netflixclonadmin.onrender.com",
