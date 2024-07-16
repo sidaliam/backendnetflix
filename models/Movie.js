@@ -15,7 +15,7 @@ const MovieSchema = new mongoose.Schema(
     limit: { type: Number },
     genre: { type: String },
     isSeries: { type: Boolean, default: false },
-    subtitles: { type: String, required: true },
+    subtitles: { type: String },
   },
   { timestamps: true }
 );
