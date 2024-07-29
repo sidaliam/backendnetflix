@@ -30,20 +30,20 @@ const corsOptions = {
     "https://localhost:3000",
     "https://localhost:3001",
     "http://192.168.100.5:3000",
-    "http://192.168.1.7:3000",
-    "http://192.168.1.4:3000",
     "http://localhost:4000",
     "https://netflixclonadmin.onrender.com",
     "http://netflixclonadmin.onrender.com",
     "https://localhost",
     "https://clonenetflixtest.onrender.com"
-  ], 
-  methods: "GET,POST,PUT,DELETE",
+  ],
+  methods: "GET,POST,PUT,DELETE,OPTIONS",
   allowedHeaders: "Content-Type,Authorization",
-  optionsSuccessStatus: 200,
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Enable pre-flight requests for all routes
+
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
@@ -52,8 +52,6 @@ app.use("/api/lists", listRoute);
 app.use("/api/episodes", episodeRoute);
 app.use("/api/seasons", seasonRoute);
 app.use("/api/series", seriesRoute);
-
-app.options("*", cors(corsOptions)); // Enable pre-flight requests for all routes
 
 app.listen(8800, () => {
   console.log("Backend server is running!");
