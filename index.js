@@ -19,7 +19,7 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() => console.log("DB Connection Successful"))
+  .then(() => console.log("DB Connection Successfull"))
   .catch((err) => {
     console.error(err);
   });
@@ -35,16 +35,13 @@ const corsOptions = {
     "http://netflixclonadmin.onrender.com",
     "https://localhost",
     "https://clonenetflixtest.onrender.com"
-  ],
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  allowedHeaders: "Content-Type,Authorization",
-  credentials: true,
+  ], // Remplacez par le domaine de votre frontend déployé
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "*",
 };
 
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Enable pre-flight requests for all routes
-
 app.use(express.json());
+app.use(cors(corsOptions));
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
